@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*- 
-#Python初学者、我是代码搬运工、根据网上代码改写而成、大家勿喷
+#Python初学者、我是代码搬运工、根据网上代码启发而成、大家勿喷
 #author:water
   
 import platform 

@@ -11,9 +11,7 @@ import urllib
 import socket 
   
 def get_os(): 
-  ''''' 
-  get os 类型 
-  '''
+
   os = platform.system() 
   if os == "Windows": 
     return "n"
@@ -25,8 +23,6 @@ def ping_ip(ip,port,para):
   try:
       s.connect((ip,int(port)))
       s.shutdown(2)
-      # print '%d is open' % port
-      # return True
       url = "http://"+ip+":"+port+para
       status=urllib.urlopen(url).code
       if(status == 200 or status == 403 or status == 404 or status == 500):
@@ -36,9 +32,7 @@ def ping_ip(ip,port,para):
       return False
   
 def find_ip(ip_prefix,port,para): 
-  ''''' 
-  给出当前的127.0.0 ，然后扫描整个段所有地址 
-  '''
+
   for i in range(1,256): 
     ip = '%s.%s'%(ip_prefix,i) 
     thread.start_new_thread(ping_ip, (ip,port,para)) 

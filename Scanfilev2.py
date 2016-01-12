@@ -41,8 +41,11 @@ if __name__ == "__main__":
   for ipport in f.readlines():
   	ipport = ipport.strip('\n')
   	flag = ipport.rfind(":")
-  	ip = ipport[:flag]
-  	port = ipport[flag+1:]
+  	if flag != -1:
+  		port = ipport[flag+1:]
+  	else:
+  		port = str(80)
+	ip = ipport[:flag]
   	# print ip, port
   	# find_ip(ip,port,para) 
   	thread.start_new_thread(ping_ip, (ip,port,para)) 

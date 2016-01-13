@@ -43,6 +43,7 @@ if __name__ == "__main__":
     flag = ipport.rfind(":")
     if flag != -1:
       port = ipport[flag+1:]
+      ip = ipport[:flag]
     else:
       port = str(80)
       ip = ipport

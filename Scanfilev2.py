@@ -39,16 +39,16 @@ if __name__ == "__main__":
   f = open(uri, 'a+')
   # print f.readlines()
   for ipport in f.readlines():
-  	ipport = ipport.strip('\n')
-  	flag = ipport.rfind(":")
-  	if flag != -1:
-  		port = ipport[flag+1:]
-  	else:
-  		port = str(80)
-	ip = ipport[:flag]
-  	# print ip, port
-  	# find_ip(ip,port,para) 
-  	thread.start_new_thread(ping_ip, (ip,port,para)) 
-  	time.sleep(0.3)
+    ipport = ipport.strip('\n')
+    flag = ipport.rfind(":")
+    if flag != -1:
+      port = ipport[flag+1:]
+    else:
+      port = str(80)
+      ip = ipport
+      # print ip, port
+      # find_ip(ip,port,para) 
+    thread.start_new_thread(ping_ip, (ip,port,para)) 
+    time.sleep(0.3)
   f.close()
   print "end time %s"%time.ctime()
